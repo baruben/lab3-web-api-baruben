@@ -1,6 +1,9 @@
-# Recent versions of H2 require special configuration to properly escape reserved keywords like "user".
 spring:
-  jpa:
-    properties:
-      hibernate:
-        globally_quoted_identifiers: true
+  r2dbc:
+    url: r2dbc:h2:mem:///testdb
+    username: sa
+    password:
+sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql

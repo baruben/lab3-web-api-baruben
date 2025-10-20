@@ -7,7 +7,6 @@ springmockk = "4.0.2"
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin"}
 kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin"}
-kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin"}
 spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 
@@ -15,7 +14,11 @@ ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 spring-boot-bom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springBoot"}
 spring-boot-starter-thymeleaf = { module = "org.springframework.boot:spring-boot-starter-thymeleaf" }
 spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
-spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
+spring-boot-starter-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux" }
+spring-boot-starter-data-r2dbc = { module = "org.springframework.boot:spring-boot-starter-data-r2dbc" }
+
+r2dbc-h2 = { module = "io.r2dbc:r2dbc-h2" }
+
 spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
 ninjasquad-springmocck = { module = "com.ninja-squad:springmockk", version.ref = "springmockk" }
 h2database-h2 = { module ="com.h2database:h2" }

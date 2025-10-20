@@ -2,7 +2,6 @@ package es.unizar.webeng.lab3
 
 import com.ninjasquad.springmockk.MockkBean
 import io.mockk.every
-import io.mockk.justRun
 import io.mockk.verify
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -38,12 +37,12 @@ private val MANAGER_RESPONSE_BODY = { name: String, id: Int ->
 
 @SpringBootTest(webEnvironment = WebEnvironment.MOCK)
 @AutoConfigureMockMvc
-class ControllerTests {
+class EmployeeControllerTests {
     @Autowired
     private lateinit var mvc: MockMvc
 
     @MockkBean
-    private lateinit var employeeRepository: EmployeeRepository
+    private lateinit var employeeRepository: EmployeeRepositoryService
 
     @Test
     fun `POST is not safe and not idempotent`() {
@@ -198,9 +197,7 @@ class ControllerTests {
     @Test
     fun `DELETE is idempotent but not safe`() {
         // Allow deleteById method to be called
-        justRun {
-            employeeRepository.deleteById(1)
-        }
+        every { employeeRepository.deleteById(1) } returns null
 
         mvc.delete("/employees/1").andExpect {
             status { isNoContent() }
