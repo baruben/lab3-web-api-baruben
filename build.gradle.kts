@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.spring)
     alias(libs.plugins.spring.boot)
     alias(libs.plugins.ktlint)
+    id("io.gatling.gradle") version "3.14.5"
 }
 
 group = "es.unizar.webeng"
@@ -24,6 +25,9 @@ dependencies {
     implementation(libs.kotlin.reflect)
     implementation(libs.spring.boot.starter.data.r2dbc)
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.13")
+
+    // gatlingImplementation("io.gatling:gatling-core-java:3.14.5")
+    // gatlingImplementation("io.gatling:gatling-http-java:3.14.5")
 
     runtimeOnly(libs.h2database.h2)
     runtimeOnly(libs.r2dbc.h2)

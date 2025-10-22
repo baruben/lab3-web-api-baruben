@@ -3,7 +3,7 @@ spring:
     url: r2dbc:h2:mem:///testdb
     username: sa
     password:
-sql:
-    init:
-      mode: always
-      schema-locations: classpath:schema.sql
+# sql:
+#     init:
+#       mode: always
+#       schema-locations: classpath:schema.sql
